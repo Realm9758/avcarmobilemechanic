@@ -1,0 +1,235 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-08-17T00:00:00Z",
+  "title": "Design System: A V Car Mobile Mechanic",
+  "extensions": {
+    "colorMeta": {
+      "graphite-ground": {
+        "role": "neutral",
+        "displayName": "Graphite Ground",
+        "canonical": "#0b0d11",
+        "houseCanon": true,
+        "tonalRamp": ["#05060a", "#0b0d11", "#12151b", "#181c23", "#2a3140", "#4a5468", "#7b869a", "#c6ccd6"]
+      },
+      "graphite-panel": {
+        "role": "neutral",
+        "displayName": "Graphite Panel",
+        "canonical": "#12151b",
+        "houseCanon": true,
+        "tonalRamp": ["#07090c", "#0d1015", "#12151b", "#1b202a", "#2d3444", "#4e5769", "#7e8a9c", "#c8ced8"]
+      },
+      "cobalt": {
+        "role": "primary",
+        "displayName": "Working Cobalt",
+        "canonical": "#4d89f5",
+        "houseCanon": false,
+        "note": "This build's own accent axis. Lighter than the deep Spode blue so small label text clears 4.5:1 on graphite (measured 5.75:1 on ground, 5.41:1 on panel).",
+        "tonalRamp": ["#0a1c3c", "#123063", "#1c478f", "#2a63c4", "#4d89f5", "#7fa9ff", "#accaff", "#dfe9ff"]
+      },
+      "cobalt-bright": {
+        "role": "primary",
+        "displayName": "Cobalt Bright",
+        "canonical": "#7fa9ff",
+        "houseCanon": false,
+        "note": "The hover state everywhere: button fill, ghost text, link and phone hover.",
+        "tonalRamp": ["#0d1f42", "#16356c", "#204d9b", "#3169cd", "#5590ff", "#7fa9ff", "#b0cbff", "#e2ecff"]
+      },
+      "cobalt-deep": {
+        "role": "primary",
+        "displayName": "Deep Spode",
+        "canonical": "#2e6fd9",
+        "houseCanon": false,
+        "note": "Light-asset only: falloff stops in public/kerbside.svg and public/kerbside-close.svg. Never carries text; it does not clear 4.5:1 on graphite.",
+        "tonalRamp": ["#08172f", "#0f2851", "#173c7c", "#2154ab", "#2e6fd9", "#5b91ea", "#93b7f5", "#d3e2fb"]
+      },
+      "cobalt-ink": {
+        "role": "primary",
+        "displayName": "Cobalt Ink",
+        "canonical": "#04101f",
+        "houseCanon": false,
+        "note": "The foreground on cobalt: primary button label and selected text. Nothing else.",
+        "tonalRamp": ["#02080f", "#04101f", "#082139", "#0d3358", "#154a7d", "#2467a8", "#5591d4", "#a8c8ee"]
+      },
+      "workshop-white": {
+        "role": "neutral",
+        "displayName": "Workshop White",
+        "canonical": "#f3f5f7",
+        "houseCanon": true,
+        "tonalRamp": ["#1b1e22", "#2c3138", "#434a53", "#5f6771", "#848c96", "#adb4bc", "#d5d9de", "#f3f5f7"]
+      },
+      "steel-mid": {
+        "role": "neutral",
+        "displayName": "Steel Mid",
+        "canonical": "#c1c7cf",
+        "houseCanon": true,
+        "tonalRamp": ["#191c20", "#292d33", "#3f444c", "#5a6069", "#7d838c", "#a2a9b2", "#c1c7cf", "#e6e9ed"]
+      },
+      "steel-dim": {
+        "role": "neutral",
+        "displayName": "Steel Dim",
+        "canonical": "#969ea8",
+        "houseCanon": true,
+        "tonalRamp": ["#171a1e", "#262a30", "#3a3f47", "#535962", "#747b85", "#969ea8", "#bcc2c9", "#e3e6ea"]
+      },
+      "hairline": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "rgba(243, 245, 247, 0.12)",
+        "houseCanon": true,
+        "note": "The only structural device in the system. 1px, used for every rule and border.",
+        "tonalRamp": ["rgba(243,245,247,0.04)", "rgba(243,245,247,0.08)", "rgba(243,245,247,0.12)", "rgba(243,245,247,0.16)", "rgba(243,245,247,0.22)", "rgba(243,245,247,0.3)", "rgba(243,245,247,0.45)", "rgba(243,245,247,0.7)"]
+      },
+      "hairline-strong": {
+        "role": "neutral",
+        "displayName": "Hairline Strong",
+        "canonical": "rgba(243, 245, 247, 0.22)",
+        "houseCanon": true,
+        "note": "Ghost button stroke, tick dividers, the unfilled half of a star.",
+        "tonalRamp": ["rgba(243,245,247,0.06)", "rgba(243,245,247,0.12)", "rgba(243,245,247,0.18)", "rgba(243,245,247,0.22)", "rgba(243,245,247,0.3)", "rgba(243,245,247,0.4)", "rgba(243,245,247,0.55)", "rgba(243,245,247,0.8)"]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "The name lockup and the closing phone number only. Two per page, both decision points. Uppercase at wdth 125." },
+      "headline": { "displayName": "Headline", "purpose": "Section heads. Uppercase at wdth 120." },
+      "title": { "displayName": "Title", "purpose": "Service row titles at wdth 118; town names run a size above at wdth 122." },
+      "body": { "displayName": "Body", "purpose": "Service copy at 62ch, leads at 42-56ch. Sentence case, normal width, never stretched." },
+      "label": { "displayName": "Label", "purpose": "The house label tier: plate head, contact labels, hero foot rail, review source. Uppercase, 0.16em." },
+      "label-sub": { "displayName": "Label Sub", "purpose": "One step under the label tier, in steel dim, for rows inside a container that already carries a house-tier label." }
+    },
+    "shadows": [
+      { "name": "cobalt-bloom", "value": "0 12px 30px -14px rgba(77, 137, 245, 0.6)", "purpose": "The primary call button only. Reads as the button glowing, not floating. Never on a card, plate or panel." }
+    ],
+    "motion": [
+      { "name": "ease-state", "value": "150ms ease-out", "purpose": "Every hover, colour and transform state change." },
+      { "name": "ease-settle", "value": "cubic-bezier(0.22, 1, 0.36, 1)", "purpose": "The one authored entrance: 900ms rise with 14px translate, staggered 60/150/240/330/420ms, and the 1400ms lamp fade from blur(20px). Both are inside prefers-reduced-motion: no-preference." }
+    ],
+    "breakpoints": [
+      { "name": "wide", "value": "1040px" },
+      { "name": "stack", "value": "900px" },
+      { "name": "phone", "value": "700px" }
+    ],
+    "assets": [
+      { "name": "kerbside.svg", "purpose": "Hero light. Directional, low-left, seven-stop cobalt falloff plus a masked road wash, a street-light wash and baked fractalNoise grain at 0.055 overlay. Gradient opacity runs roughly double the amber sibling's because cobalt is a darker hue on the same graphite." },
+      { "name": "kerbside-close.svg", "purpose": "Closing band light. Same lamp turned down and centred in its own asset, directional washes dropped." },
+      { "name": "icon.svg", "purpose": "Favicon: a drawn hex nut in cobalt stroke on graphite, no fill, flats that still read at 16px." }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The call. The loudest cobalt on the page, and the only element carrying a shadow.",
+      "html": "<a class=\"ds-btn ds-btn-primary\" href=\"tel:+447344679503\">Call now</a>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.6rem; min-height: 48px; padding: 0.95rem 1.7rem; border-radius: 3px; border: 1px solid transparent; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-size: 0.95rem; font-weight: 650; line-height: 1; letter-spacing: 0.04em; text-transform: uppercase; font-stretch: 112%; text-decoration: none; cursor: pointer; transition: background-color 150ms ease-out, color 150ms ease-out, border-color 150ms ease-out, transform 150ms ease-out; } .ds-btn-primary { background: #4d89f5; color: #04101f; box-shadow: 0 12px 30px -14px rgba(77, 137, 245, 0.6); } .ds-btn-primary:hover { background: #7fa9ff; transform: translateY(-1px); } .ds-btn-primary:active { transform: translateY(1px); } .ds-btn-primary:focus-visible { outline: 2px solid #4d89f5; outline-offset: 3px; border-radius: 2px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "The secondary action. A hairline stroke, no fill, and it never gets equal mass to the call on a phone.",
+      "html": "<a class=\"ds-btn-ghost\" href=\"#services\">What we fix</a>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0.95rem 1.7rem; border-radius: 3px; border: 1px solid rgba(243,245,247,0.22); background: transparent; color: #f3f5f7; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-size: 0.95rem; font-weight: 650; line-height: 1; letter-spacing: 0.04em; text-transform: uppercase; font-stretch: 112%; text-decoration: none; cursor: pointer; transition: color 150ms ease-out, border-color 150ms ease-out, transform 150ms ease-out; } .ds-btn-ghost:hover { border-color: #4d89f5; color: #7fa9ff; transform: translateY(-1px); } .ds-btn-ghost:active { transform: translateY(1px); } .ds-btn-ghost:focus-visible { outline: 2px solid #4d89f5; outline-offset: 3px; }"
+    },
+    {
+      "name": "Sticky Topbar",
+      "kind": "nav",
+      "refersTo": "topbar",
+      "description": "The only navigation: a wordmark and the phone number as a small primary button, present at every scroll position.",
+      "html": "<header class=\"ds-topbar\"><div class=\"ds-topbar-inner\"><a class=\"ds-brand\" href=\"#top\">A V Car Mobile Mechanic</a><a class=\"ds-btn-small\" href=\"tel:+447344679503\">07344 679503</a></div></header>",
+      "css": ".ds-topbar { background: rgba(11, 13, 17, 0.78); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid rgba(243,245,247,0.12); } .ds-topbar-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; min-height: 64px; padding: 0.7rem 1.5rem; max-width: 1180px; margin: 0 auto; } .ds-brand { color: #f3f5f7; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-size: 0.95rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; font-stretch: 118%; text-decoration: none; white-space: nowrap; } .ds-btn-small { display: inline-flex; align-items: center; min-height: 44px; padding: 0.6rem 1.1rem; border-radius: 3px; background: #4d89f5; color: #04101f; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; font-size: 0.85rem; font-weight: 650; letter-spacing: 0.04em; text-transform: uppercase; font-stretch: 112%; text-decoration: none; font-variant-numeric: tabular-nums; transition: background-color 150ms ease-out, transform 150ms ease-out; } .ds-btn-small:hover { background: #7fa9ff; transform: translateY(-1px); } .ds-btn-small:focus-visible { outline: 2px solid #4d89f5; outline-offset: 3px; }"
+    },
+    {
+      "name": "Review Card",
+      "kind": "card",
+      "refersTo": "review-card",
+      "description": "The only filled card in the system. Quote on top, hairline rule, then name and source.",
+      "html": "<figure class=\"ds-review\"><blockquote class=\"ds-review-quote\">Came out at eleven at night and had the car started in twenty minutes.</blockquote><figcaption class=\"ds-review-attrib\"><span class=\"ds-review-name\">Sarah H.</span><span class=\"ds-review-source\">Google review</span></figcaption></figure>",
+      "css": ".ds-review { display: flex; flex-direction: column; background: #12151b; border: 1px solid rgba(243,245,247,0.12); border-radius: 5px; padding: 2rem 2rem 1.7rem; margin: 0; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; } .ds-review-quote { flex: 1; margin: 0; font-size: 1.38rem; line-height: 1.45; letter-spacing: -0.005em; color: #f3f5f7; text-wrap: pretty; } .ds-review-attrib { display: flex; align-items: baseline; gap: 0.6rem; margin-top: 1.7rem; padding-top: 1.2rem; border-top: 1px solid rgba(243,245,247,0.12); font-size: 0.88rem; } .ds-review-name { color: #f3f5f7; font-weight: 650; letter-spacing: 0.02em; } .ds-review-source { color: #969ea8; font-size: 0.8rem; letter-spacing: 0.08em; text-transform: uppercase; }"
+    },
+    {
+      "name": "Hero Fact Plate",
+      "kind": "custom",
+      "refersTo": "fact-plate",
+      "description": "The hairline-framed definition list opposite the name lockup. House-tier cobalt head, steel-dim row labels a step below it, hairline between rows. Stacked, the frame and head come off entirely.",
+      "html": "<div class=\"ds-plate\"><p class=\"ds-plate-head\">The van, in short</p><dl class=\"ds-plate-list\"><div class=\"ds-plate-row\"><dt>Rated</dt><dd>4.5 out of 5, 8 Google reviews</dd></div><div class=\"ds-plate-row\"><dt>Hours</dt><dd>Answered around the clock</dd></div><div class=\"ds-plate-row\"><dt>Experience</dt><dd>Over 20 years on the tools</dd></div></dl></div>",
+      "css": ".ds-plate { background: rgba(18, 21, 27, 0.66); border: 1px solid rgba(243,245,247,0.12); border-radius: 4px; padding: 1.6rem 1.7rem 0.4rem; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; max-width: 420px; } .ds-plate-head { margin: 0; font-size: 0.76rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: #4d89f5; padding-bottom: 1.15rem; border-bottom: 1px solid rgba(243,245,247,0.12); } .ds-plate-list { margin: 0; } .ds-plate-row { padding-block: 1.1rem; border-bottom: 1px solid rgba(243,245,247,0.12); } .ds-plate-row:last-child { border-bottom: 0; padding-bottom: 1.5rem; } .ds-plate-row dt { font-size: 0.68rem; font-weight: 600; letter-spacing: 0.13em; text-transform: uppercase; color: #969ea8; } .ds-plate-row dd { margin: 0.55rem 0 0; color: #c1c7cf; font-size: 0.98rem; line-height: 1.5; }"
+    },
+    {
+      "name": "Half-Star Rating",
+      "kind": "custom",
+      "refersTo": "fact-plate",
+      "description": "Five authored star paths filled to the real score by a hard-stop gradient, so 4.5 shows four solid and one exactly half full. No rounding up, no icon font.",
+      "html": "<span class=\"ds-rating\"><span class=\"ds-stars\"><svg class=\"ds-star\" viewBox=\"0 0 16 16\"><path d=\"M8 0.6l2.06 4.75 5.14.46-3.88 3.4 1.15 5.03L8 11.6l-4.47 2.64 1.15-5.03L.8 5.81l5.14-.46L8 .6z\" fill=\"#4d89f5\"/></svg><svg class=\"ds-star\" viewBox=\"0 0 16 16\"><path d=\"M8 0.6l2.06 4.75 5.14.46-3.88 3.4 1.15 5.03L8 11.6l-4.47 2.64 1.15-5.03L.8 5.81l5.14-.46L8 .6z\" fill=\"#4d89f5\"/></svg><svg class=\"ds-star\" viewBox=\"0 0 16 16\"><path d=\"M8 0.6l2.06 4.75 5.14.46-3.88 3.4 1.15 5.03L8 11.6l-4.47 2.64 1.15-5.03L.8 5.81l5.14-.46L8 .6z\" fill=\"#4d89f5\"/></svg><svg class=\"ds-star\" viewBox=\"0 0 16 16\"><path d=\"M8 0.6l2.06 4.75 5.14.46-3.88 3.4 1.15 5.03L8 11.6l-4.47 2.64 1.15-5.03L.8 5.81l5.14-.46L8 .6z\" fill=\"#4d89f5\"/></svg><svg class=\"ds-star\" viewBox=\"0 0 16 16\"><defs><linearGradient id=\"ds-half\" x1=\"0\" x2=\"1\" y1=\"0\" y2=\"0\"><stop offset=\"0.5\" stop-color=\"#4d89f5\"/><stop offset=\"0.5\" stop-color=\"rgba(243,245,247,0.22)\"/></linearGradient></defs><path d=\"M8 0.6l2.06 4.75 5.14.46-3.88 3.4 1.15 5.03L8 11.6l-4.47 2.64 1.15-5.03L.8 5.81l5.14-.46L8 .6z\" fill=\"url(#ds-half)\"/></svg></span><span class=\"ds-score\">4.5</span><span class=\"ds-tick\"></span><span class=\"ds-count\">8 Google reviews</span></span>",
+      "css": ".ds-rating { display: flex; align-items: center; gap: 0.85rem; flex-wrap: wrap; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; color: #f3f5f7; } .ds-stars { display: inline-flex; gap: 3px; } .ds-star { display: block; width: 16px; height: 16px; } .ds-score { font-weight: 700; font-stretch: 112%; letter-spacing: 0.02em; font-variant-numeric: tabular-nums; } .ds-tick { width: 1px; height: 14px; background: rgba(243,245,247,0.22); } .ds-count { color: #c1c7cf; font-size: 0.95rem; }"
+    },
+    {
+      "name": "Coverage Run",
+      "kind": "custom",
+      "refersTo": "review-card",
+      "description": "The towns the van covers, at near-display scale on an authored two-column grid, each led by the 6px cobalt diamond. The airy section between two dense ones; the fixed-premises siblings have no equivalent.",
+      "html": "<ul class=\"ds-towns\"><li class=\"ds-town\">Stoke-on-Trent</li><li class=\"ds-town\">Hanley</li><li class=\"ds-town\">Burslem</li><li class=\"ds-town\">Fenton</li><li class=\"ds-town\">Longton</li><li class=\"ds-town\">Newcastle-under-Lyme</li></ul>",
+      "css": ".ds-towns { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.9rem 3rem; margin: 0; padding: 2.4rem 0 0; border-top: 1px solid rgba(243,245,247,0.12); list-style: none; font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; color: #f3f5f7; } .ds-town { display: flex; align-items: baseline; gap: 0.75rem; font-size: 1.85rem; font-weight: 650; line-height: 1.15; text-transform: uppercase; font-stretch: 122%; letter-spacing: 0.005em; } .ds-town::before { content: \"\"; width: 6px; height: 6px; flex: none; transform: translateY(-0.35em) rotate(45deg); background: #4d89f5; } @media (max-width: 700px) { .ds-towns { grid-template-columns: minmax(0, 1fr); gap: 0.85rem; } }"
+    },
+    {
+      "name": "Service Row",
+      "kind": "custom",
+      "refersTo": "review-card",
+      "description": "The hairline list that replaces a card grid: stretched caps title left at five columns, steel body right at seven, rule beneath. Collapses to one column under 900px.",
+      "html": "<div class=\"ds-service-list\"><article class=\"ds-service-row\"><h3 class=\"ds-service-title\">Diagnostics</h3><p class=\"ds-service-body\">Fault codes read at your kerb, with the reading explained before any work is agreed.</p></article><article class=\"ds-service-row\"><h3 class=\"ds-service-title\">Brakes and discs</h3><p class=\"ds-service-body\">Pads and discs replaced on the driveway, with the old parts left for you to see.</p></article></div>",
+      "css": ".ds-service-list { border-top: 1px solid rgba(243,245,247,0.12); font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; } .ds-service-row { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 1rem 2.5rem; align-items: baseline; padding-block: 1.9rem; border-bottom: 1px solid rgba(243,245,247,0.12); } .ds-service-title { margin: 0; color: #f3f5f7; font-size: 1.4rem; font-weight: 650; line-height: 1.1; text-transform: uppercase; font-stretch: 118%; letter-spacing: 0.02em; } .ds-service-body { margin: 0; color: #c1c7cf; font-size: 1.05rem; line-height: 1.6; max-width: 62ch; } @media (max-width: 900px) { .ds-service-row { grid-template-columns: minmax(0, 1fr); gap: 0.5rem; padding-block: 1.6rem; } }"
+    },
+    {
+      "name": "Text Link",
+      "kind": "custom",
+      "refersTo": "review-card",
+      "description": "Inline links: white with a hairline underline held 4px off the baseline, going cobalt on hover.",
+      "html": "<a class=\"ds-link\" href=\"#\">Open in Google Maps</a>",
+      "css": ".ds-link { font-family: Archivo, 'Helvetica Neue', Arial, sans-serif; color: #f3f5f7; text-decoration: underline; text-decoration-color: rgba(243,245,247,0.22); text-decoration-thickness: 1px; text-underline-offset: 4px; transition: color 150ms ease-out, text-decoration-color 150ms ease-out; } .ds-link:hover { color: #7fa9ff; text-decoration-color: #4d89f5; } .ds-link:focus-visible { outline: 2px solid #4d89f5; outline-offset: 3px; border-radius: 2px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Inspection Lamp Set Down On A Road",
+    "overview": "This is the house dark-professional canon shared with the same owner's Showroom Shine, CJ Valeting and M&A Auto Service sites, run here in Spode cobalt. The ground, the text ramp, the hairlines, the radius set, the rhythm scale, the motion pair and the Archivo type treatment are canon and are identical across the family. The accent is the only permitted axis of divergence: change the hue, change nothing else. A reference implementation of the same system in signal amber sits at /Users/realm/maautoservice.\n\nTwo things this client forced that the siblings did not. First, cobalt is a darker hue than amber, so it needs a lighter working token to clear 4.5:1 against graphite for small label text, and roughly double the gradient opacity of the warm sibling to throw the same amount of light on the same ground. Second, the trade is mobile, so coverage is a fact the page owes the visitor and it gets a section of its own, set at display scale between two dense sections. Neither is a house change; both are this build's own.\n\nThe page has no photographs and none may be invented, so the hero is lit rather than shot. The light is a produced asset with seven authored falloff stops and grain baked in, not a stack of flat CSS ramps, and it appears exactly twice. Everything else is flat: hairline rules carry all structure, the review row is the only place a filled card is allowed, and cobalt is rationed hard enough that the call button stays the loudest thing on the page.",
+    "keyCharacteristics": [
+      "Graphite near-black ground run a degree cooler than the amber sibling, to sit under cobalt",
+      "Hairline rules (1px at 12% white) as the only structural device",
+      "One rationed chromatic accent: labels, stars, ticks, town markers, CTA, phone number",
+      "Wide-stretched Archivo caps against plain sentence-case body",
+      "Flat by default; produced light instead of shadow, twice on the page",
+      "Facts over decoration: every hero-plate row restates something the page proves elsewhere"
+    ],
+    "rules": [
+      { "name": "The One Accent Rule", "body": "Cobalt is the only chromatic hue on the page. A second hue anywhere, including inside the light assets, breaks the world; the lamp is lit in cobalt for exactly this reason.", "section": "colors" },
+      { "name": "The Working Cobalt Rule", "body": "Small text, glyphs and controls take the working cobalt. The deep Spode value stays inside the light assets, where nothing has to be read off it.", "section": "colors" },
+      { "name": "The Accent-Only Divergence Rule", "body": "When this system is carried to another site in the family, the accent hue is the only token that may change. Ground, steel ramp, hairlines, radii, rhythm and type stay as they are.", "section": "colors" },
+      { "name": "The Ration Rule", "body": "Cobalt is spent on labels, stars, ticks, town markers, the two call buttons and the phone number. Inside the hero plate it is limited to the plate head and the stars so the call button remains the loudest cobalt in the first viewport.", "section": "colors" },
+      { "name": "The Stretched Caps Rule", "body": "Uppercase and a width axis above 110% belong to headings, labels and buttons. Body copy is sentence case at normal width. Never stretch a sentence; never set a heading unstretched.", "section": "typography" },
+      { "name": "The One Label Tier Rule", "body": "A container that already carries a label at the house tier sets its interior labels a step below it in steel, not a second colour at the same size.", "section": "typography" },
+      { "name": "The Tabular Rule", "body": "Numbers that a visitor may compare or dial (rating score, phone numbers, hours) set font-variant-numeric: tabular-nums.", "section": "typography" },
+      { "name": "The First Viewport Rule", "body": "The hero foot rail lands inside the first screen on a phone. Anything that would push it under the fold stands down, and what stands down must be restated in full further down the page.", "section": "layout" },
+      { "name": "The Two Lamps Rule", "body": "The produced light appears exactly twice: directional and low-left behind the hero, centred and turned down behind the closing phone number. A third instance turns a device into wallpaper.", "section": "elevation" },
+      { "name": "The Lit-Not-Filled Rule", "body": "Where a band needs presence, light it with the produced asset. Do not reach for a CSS gradient ramp; a blue gradient hero is the stock template this world exists to refuse.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do run structure on hairlines. A new section opens with a 1px top rule and the section pad, not with a box.",
+      "Do keep cobalt to labels, stars, ticks, town markers, the call buttons and the phone number.",
+      "Do use the working cobalt for anything that must be read; leave the deep Spode inside the light assets.",
+      "Do set headings uppercase with the width axis above 110% and body sentence case at normal width.",
+      "Do author a produced SVG light when a band needs presence, with real falloff stops and baked grain.",
+      "Do give every interactive element a :hover, an :active and a visible cobalt focus ring, and cancel every transform under prefers-reduced-motion.",
+      "Do author grid breaks where a wrapping run would rag badly, and lead ornaments rather than separating with them.",
+      "Do carry this system to a sibling site by changing the accent hue alone."
+    ],
+    "donts": [
+      "Don't introduce a second chromatic hue, in CSS or in an asset.",
+      "Don't put a filled card anywhere but the review row; every other grouping is a hairline.",
+      "Don't add a third instance of the produced light.",
+      "Don't build a lit band out of CSS gradient ramps.",
+      "Don't stretch body copy or set a heading at normal width.",
+      "Don't use a glyph icon font or a borrowed icon set; the star, the diamond and the favicon nut are authored paths.",
+      "Don't let a container show two label colours at the same size.",
+      "Don't give a secondary action the same mass as the call on a phone."
+    ]
+  }
+}
