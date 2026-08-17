@@ -1,0 +1,977 @@
+/*
+  A V Car Mobile Mechanic: the house dark-professional canon, Spode cobalt.
+
+  Sibling to the Showroom Shine, CJ Valeting and M&A Auto Service systems:
+  graphite ground, hairline rules as the only structural device, one rationed
+  chromatic accent, wide-stretched Archivo caps against plain sentence-case
+  body, flat depth. The accent is the whole of the divergence, by instruction.
+
+  Two things this client forces that the siblings did not:
+
+  1. There are no photographs of the business and none may be invented, so the
+     hero is lit rather than shot. Unlike the fixed workshop next door in this
+     family, this business arrives, so the light is cold and lateral: an
+     inspection lamp set down on a road, not a lamp hung over a floor.
+
+  2. The trade is mobile, so coverage is a fact the page owes the visitor. It
+     gets a section of its own, and that section is the airy one between two
+     dense ones.
+*/
+
+:root {
+  /* Ground. A degree cooler than the amber sibling, to sit under cobalt. */
+  --graphite-ground: #0b0d11;
+  --graphite-panel: #12151b;
+  --graphite-raised: #181c23;
+
+  /* Accent: Spode cobalt, rationed */
+  --cobalt: #4d89f5;
+  --cobalt-bright: #7fa9ff;
+  --cobalt-deep: #2e6fd9;
+  --cobalt-ink: #04101f;
+
+  /* Text ramp */
+  --workshop-white: #f3f5f7;
+  --steel-mid: #c1c7cf;
+  --steel-dim: #969ea8;
+
+  /* Rules */
+  --hairline: rgba(243, 245, 247, 0.12);
+  --hairline-strong: rgba(243, 245, 247, 0.22);
+
+  /* Shape */
+  --r-focus: 2px;
+  --r-button: 3px;
+  --r-frame: 4px;
+  --r-card: 5px;
+
+  /* Rhythm */
+  --gutter: clamp(1.25rem, 4vw, 2.5rem);
+  --block: 3rem;
+  --grid-gap: clamp(1.5rem, 3vw, 2.5rem);
+  --section-pad: clamp(4.5rem, 10vh, 7.5rem);
+  --container: 1180px;
+  --measure: 820px;
+
+  /* Motion */
+  --ease-state: 150ms ease-out;
+  --ease-settle: cubic-bezier(0.22, 1, 0.36, 1);
+
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--graphite-ground);
+  color: var(--workshop-white);
+  font-family: var(--font-archivo), "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* --- Browser surfaces carry the design too ------------------------------ */
+
+::selection {
+  background: var(--cobalt);
+  color: var(--cobalt-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--cobalt);
+  outline-offset: 3px;
+  border-radius: var(--r-focus);
+}
+
+* {
+  caret-color: var(--cobalt);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #283040 var(--graphite-ground);
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--graphite-ground);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #283040;
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #37415a;
+}
+
+/* --- Type ---------------------------------------------------------------- */
+
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-weight: 650;
+  line-height: 1.1;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  font-stretch: 120%;
+  text-wrap: balance;
+}
+
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+/* Sticky topbar clearance for in-page anchors. */
+section[id] {
+  scroll-margin-top: 84px;
+}
+
+/* --- Shared furniture ---------------------------------------------------- */
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin: 0 auto;
+  padding-inline: var(--gutter);
+}
+
+.section {
+  border-top: 1px solid var(--hairline);
+  padding-block: var(--section-pad);
+}
+
+.sectionHead {
+  font-size: clamp(1.5rem, 3vw, 2.2rem);
+}
+
+.sectionBody {
+  margin-top: var(--block);
+}
+
+.visuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* --- Buttons ------------------------------------------------------------- */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  min-height: 48px;
+  padding: 0.95rem 1.7rem;
+  border-radius: var(--r-button);
+  border: 1px solid transparent;
+  font: inherit;
+  font-size: 0.95rem;
+  font-weight: 650;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-stretch: 112%;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--ease-state), color var(--ease-state),
+    border-color var(--ease-state), transform var(--ease-state);
+}
+
+.btnPrimary {
+  background: var(--cobalt);
+  color: var(--cobalt-ink);
+  box-shadow: 0 12px 30px -14px rgba(77, 137, 245, 0.6);
+}
+
+.btnPrimary:hover {
+  background: var(--cobalt-bright);
+  transform: translateY(-1px);
+}
+
+.btnPrimary:active {
+  transform: translateY(1px);
+}
+
+.btnGhost {
+  background: transparent;
+  color: var(--workshop-white);
+  border-color: var(--hairline-strong);
+}
+
+.btnGhost:hover {
+  border-color: var(--cobalt);
+  color: var(--cobalt-bright);
+  transform: translateY(-1px);
+}
+
+.btnGhost:active {
+  transform: translateY(1px);
+}
+
+.btnSmall {
+  min-height: 44px;
+  padding: 0.6rem 1.1rem;
+  font-size: 0.85rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn,
+  .btnPrimary:hover,
+  .btnGhost:hover,
+  .btnPrimary:active,
+  .btnGhost:active {
+    transition: none;
+    transform: none;
+  }
+}
+
+/* --- Topbar -------------------------------------------------------------- */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(11, 13, 17, 0.78);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.topbarInner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  min-height: 64px;
+  padding-block: 0.7rem;
+}
+
+.brandMark {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-stretch: 118%;
+  text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.brandMarkShort {
+  display: none;
+}
+
+/* --- Hero ---------------------------------------------------------------- */
+
+.hero {
+  position: relative;
+  isolation: isolate;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 92svh;
+  overflow: hidden;
+  padding-block: clamp(3.5rem, 9vh, 6rem) 0;
+}
+
+/*
+  The kerbside lamp. This is the hero image. There is no photograph of this
+  business and none may be invented, so the road is lit rather than shot, and
+  the light is a produced asset (public/kerbside.svg) with authored seven-stop
+  falloff and its grain baked in, not a stack of flat CSS ramps. Cobalt only: a
+  second hue here would break the one-accent rule.
+*/
+.heroLight {
+  position: absolute;
+  inset: -12% -6% -6%;
+  z-index: -1;
+  background: url("/kerbside.svg") center / cover no-repeat;
+  pointer-events: none;
+}
+
+.heroInner {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/*
+  Seven-five split. Type carries the left; the right holds the hairline frame,
+  which in the photographed sibling sites contains a photograph. There is none
+  here, so the frame contains the facts instead. Every row in it is a fact
+  already stated elsewhere on the page.
+*/
+.heroGrid {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+}
+
+.heroPlate {
+  background: rgba(18, 21, 27, 0.66);
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-frame);
+  padding: 1.6rem 1.7rem 0.4rem;
+}
+
+/*
+  Heading over list, one label system. The plate head takes the house label
+  tier (cobalt, 0.76/0.16em); the row labels sit a step below it in steel, so
+  the plate does not read as two competing label colours at one size. Cobalt
+  inside the frame is limited to this head and the rating stars, which keeps
+  the ration intact and leaves the call button the loudest cobalt on the page.
+*/
+.heroPlateHead {
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--cobalt);
+  padding-bottom: 1.15rem;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.heroPlateRow {
+  padding-block: 1.1rem;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.heroPlateRow:last-child {
+  border-bottom: 0;
+  padding-bottom: 1.5rem;
+}
+
+.heroPlateRow dt {
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--steel-dim);
+}
+
+.heroPlateRow dd {
+  margin: 0.55rem 0 0;
+  color: var(--steel-mid);
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+.heroRating {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  flex-wrap: wrap;
+}
+
+.stars {
+  display: inline-flex;
+  gap: 3px;
+}
+
+.starIcon {
+  display: block;
+  width: 16px;
+  height: 16px;
+}
+
+.ratingScore {
+  font-weight: 700;
+  font-stretch: 112%;
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+.ratingCount {
+  color: var(--steel-mid);
+  font-size: 0.95rem;
+}
+
+.ratingTick {
+  width: 1px;
+  height: 14px;
+  background: var(--hairline-strong);
+}
+
+.heroName {
+  font-size: clamp(2.9rem, 8vw, 5.4rem);
+  font-weight: 700;
+  line-height: 0.98;
+  letter-spacing: -0.005em;
+  text-transform: uppercase;
+  font-stretch: 125%;
+  max-width: 14ch;
+}
+
+.heroName span {
+  display: block;
+}
+
+.heroSub {
+  margin-top: 1.35rem;
+  color: var(--steel-mid);
+  font-size: clamp(1rem, 1.6vw, 1.12rem);
+  letter-spacing: 0.01em;
+}
+
+.heroTagline {
+  margin-top: 1.1rem;
+  max-width: 46ch;
+  color: var(--steel-dim);
+  font-size: clamp(1.02rem, 1.5vw, 1.14rem);
+  line-height: 1.6;
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 2.4rem;
+}
+
+.heroRail {
+  border-top: 1px solid var(--hairline);
+  margin-top: clamp(3rem, 7vh, 5rem);
+}
+
+.heroRailInner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem 1.6rem;
+  padding-block: 1.15rem;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--steel-dim);
+}
+
+.heroRailItem {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.heroRailItem::after {
+  content: "";
+  width: 1px;
+  height: 11px;
+  background: var(--hairline-strong);
+}
+
+/* The location is the last child, so the last service must not trail a tick. */
+.heroRailItem:nth-last-child(2)::after {
+  display: none;
+}
+
+.heroRailLocation {
+  margin-left: auto;
+  color: var(--cobalt);
+}
+
+/* --- Services ------------------------------------------------------------ */
+
+.serviceList {
+  border-top: 1px solid var(--hairline);
+}
+
+.serviceRow {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 1rem var(--grid-gap);
+  align-items: baseline;
+  padding-block: 1.9rem;
+  border-bottom: 1px solid var(--hairline);
+}
+
+.serviceTitle {
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  font-weight: 650;
+  text-transform: uppercase;
+  font-stretch: 118%;
+  letter-spacing: 0.02em;
+}
+
+.serviceBody {
+  color: var(--steel-mid);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  max-width: 62ch;
+}
+
+.serviceFootnote {
+  margin-top: 1.9rem;
+  color: var(--steel-dim);
+}
+
+/* --- Coverage ------------------------------------------------------------
+  The airy section between two dense ones. The towns are the fact a mobile
+  trade owes its visitor, so they are set at display scale and allowed to
+  breathe, marked with the same small cobalt diamond the rest of the page uses
+  rather than boxed into cards.
+------------------------------------------------------------------------- */
+
+.areaLead {
+  max-width: 42ch;
+  color: var(--steel-mid);
+  font-size: clamp(1.05rem, 1.7vw, 1.2rem);
+  line-height: 1.6;
+}
+
+.townRun {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem clamp(1.4rem, 3vw, 2.6rem);
+  margin-top: var(--block);
+  padding-top: 2.4rem;
+  border-top: 1px solid var(--hairline);
+}
+
+.town {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.75rem;
+  font-size: clamp(1.35rem, 3.4vw, 2.4rem);
+  font-weight: 650;
+  line-height: 1.15;
+  text-transform: uppercase;
+  font-stretch: 122%;
+  letter-spacing: 0.005em;
+}
+
+/*
+  The marker leads the town rather than separating it from the next one. A
+  separator cannot know where a wrapping run breaks, so it stalls at the end of
+  every line; a leading marker never does.
+*/
+.town::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  flex: none;
+  transform: translateY(-0.35em) rotate(45deg);
+  background: var(--cobalt);
+}
+
+.areaFootnote {
+  margin-top: 2.4rem;
+  color: var(--steel-dim);
+}
+
+/* --- Reviews ------------------------------------------------------------- */
+
+.reviewGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--grid-gap);
+}
+
+.reviewCard {
+  display: flex;
+  flex-direction: column;
+  background: var(--graphite-panel);
+  border: 1px solid var(--hairline);
+  border-radius: var(--r-card);
+  padding: 2rem 2rem 1.7rem;
+}
+
+.reviewQuote {
+  flex: 1;
+  font-size: clamp(1.15rem, 1.9vw, 1.38rem);
+  line-height: 1.45;
+  letter-spacing: -0.005em;
+  color: var(--workshop-white);
+  text-wrap: pretty;
+}
+
+.reviewAttrib {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  margin-top: 1.7rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid var(--hairline);
+  font-size: 0.88rem;
+}
+
+.reviewName {
+  font-weight: 650;
+  letter-spacing: 0.02em;
+}
+
+.reviewSource {
+  color: var(--steel-dim);
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* --- Contact ------------------------------------------------------------- */
+
+.locationLead {
+  max-width: 56ch;
+  color: var(--steel-mid);
+  font-size: clamp(1.05rem, 1.7vw, 1.2rem);
+  line-height: 1.6;
+}
+
+.locationGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--grid-gap);
+  margin-top: var(--block);
+  border-top: 1px solid var(--hairline);
+  padding-top: 2rem;
+}
+
+.locationCell dt {
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--cobalt);
+}
+
+.locationCell dd {
+  margin: 0.9rem 0 0;
+  color: var(--steel-mid);
+  line-height: 1.55;
+}
+
+.locationStrong {
+  color: var(--workshop-white);
+  font-weight: 650;
+  font-stretch: 112%;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  font-variant-numeric: tabular-nums;
+  transition: color var(--ease-state);
+}
+
+a.locationStrong:hover {
+  color: var(--cobalt-bright);
+}
+
+.locationNote {
+  display: block;
+  margin-top: 0.35rem;
+  color: var(--steel-dim);
+  font-size: 0.92rem;
+  font-weight: 400;
+  font-stretch: 100%;
+  letter-spacing: 0;
+}
+
+.textLink {
+  color: var(--workshop-white);
+  text-decoration: underline;
+  text-decoration-color: var(--hairline-strong);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+  transition: color var(--ease-state), text-decoration-color var(--ease-state);
+}
+
+.textLink:hover {
+  color: var(--cobalt-bright);
+  text-decoration-color: var(--cobalt);
+}
+
+/* --- Booking footer ------------------------------------------------------ */
+
+.booking {
+  background: var(--graphite-panel);
+  border-top: 1px solid var(--hairline);
+  padding-block: var(--section-pad);
+  text-align: center;
+}
+
+.bookingLead {
+  margin: 1.5rem auto 0;
+  max-width: 48ch;
+  color: var(--steel-mid);
+  font-size: clamp(1.05rem, 1.7vw, 1.2rem);
+  line-height: 1.6;
+}
+
+.bookingPhone {
+  display: inline-block;
+  margin-top: 3rem;
+  color: var(--cobalt);
+  font-size: clamp(2.1rem, 7vw, 4.4rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: 0.005em;
+  text-transform: uppercase;
+  font-stretch: 125%;
+  text-decoration: none;
+  font-variant-numeric: tabular-nums;
+  transition: color var(--ease-state);
+}
+
+.bookingPhone:hover {
+  color: var(--cobalt-bright);
+}
+
+.bookingAlt {
+  margin-top: 1.4rem;
+  color: var(--steel-dim);
+  font-size: 0.95rem;
+}
+
+.footer {
+  border-top: 1px solid var(--hairline);
+  padding-block: 2.5rem;
+  color: var(--steel-dim);
+  font-size: 0.88rem;
+  text-align: center;
+}
+
+/* --- The one authored motion moment -------------------------------------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  .rise {
+    animation: rise 900ms var(--ease-settle) backwards;
+  }
+
+  .rise-1 { animation-delay: 60ms; }
+  .rise-2 { animation-delay: 150ms; }
+  .rise-3 { animation-delay: 240ms; }
+  .rise-4 { animation-delay: 330ms; }
+  .rise-5 { animation-delay: 420ms; }
+
+  .heroLight {
+    animation: lampUp 1400ms var(--ease-settle) backwards;
+  }
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+
+  /*
+    The lamp comes up cold and out of focus, the way an inspection lamp does
+    when it is set down and the eye adjusts to it.
+  */
+  @keyframes lampUp {
+    from {
+      opacity: 0;
+      filter: blur(20px);
+    }
+    to {
+      opacity: 1;
+      filter: none;
+    }
+  }
+}
+
+/* --- Breakpoints --------------------------------------------------------- */
+
+@media (max-width: 1040px) {
+  .locationGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 2.2rem;
+  }
+
+  .reviewGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* Three quotes over two columns leaves an orphan; let it run full width. */
+  .reviewCard:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 900px) {
+  .reviewGrid,
+  .heroGrid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .reviewCard:last-child {
+    grid-column: auto;
+  }
+
+  /*
+    Stacked, the hero must still land the foot rail inside the first viewport
+    on a phone, which the contract names as a promise and which is the stated
+    primary device. The copy block and the plate are both tightened so the rail
+    clears the fold rather than falling under it.
+
+    The topbar is sticky, so it takes 64px of flow at the top of the page. A
+    100svh hero under it overflows the first screen by exactly that much and
+    clips the foot rail, so the height discounts the bar.
+  */
+  .hero {
+    min-height: calc(100svh - 64px);
+    padding-block: clamp(1.5rem, 3.5vh, 2.5rem) 0;
+  }
+
+  /*
+    The 1600x1000 lamp cropped to `cover` on a tall stacked viewport centres on
+    empty road and throws the pool off screen. Held to the left and sized past
+    the frame, it lands behind the name lockup where it belongs.
+  */
+  .heroLight {
+    background-size: 280% auto;
+    background-position: 22% 44%;
+  }
+
+  .heroGrid {
+    gap: 0;
+  }
+
+  .heroRail {
+    margin-top: 1.6rem;
+  }
+
+  .heroName {
+    font-size: clamp(2.4rem, 10.5vw, 3.4rem);
+  }
+
+  .heroSub {
+    margin-top: 0.95rem;
+  }
+
+  .heroTagline {
+    margin-top: 0.8rem;
+  }
+
+  .heroActions {
+    margin-top: 1.5rem;
+  }
+
+  /*
+    Stacked, the plate holds one row, so the frame comes off. A bordered box
+    around a single line is chrome, not structure: on a phone the rating sits
+    on its own hairline rule instead, and the plate head goes with the frame.
+  */
+  .heroPlate {
+    margin-top: 1.9rem;
+    padding: 0;
+    background: none;
+    border: 0;
+    border-top: 1px solid var(--hairline);
+  }
+
+  .heroPlateHead {
+    display: none;
+  }
+
+  /*
+    Stacked, the full plate would push the foot rail off an 844px screen. Both
+    deferred rows are restated in full further down the page, so on a phone the
+    plate carries the rating alone, which is the one fact in it that the rest
+    of the page does not repeat.
+  */
+  .heroPlateRowDeferred {
+    display: none;
+  }
+
+  .heroPlateRow {
+    padding-block: 1.15rem 0;
+    border-bottom: 0;
+  }
+
+  .serviceRow {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.5rem;
+    padding-block: 1.6rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .brandMarkFull {
+    display: none;
+  }
+
+  .brandMarkShort {
+    display: inline;
+  }
+
+  .heroActions .btn {
+    flex: 1 1 100%;
+  }
+
+  .heroRailLocation {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  /*
+    Drop the tick dividers entirely on small screens. A pseudo-element rule
+    cannot know where the row wraps, so any tick can strand at a line end; the
+    gap separates the items on its own.
+  */
+  .heroRailItem::after {
+    display: none;
+  }
+
+  .heroRailItem {
+    gap: 0;
+  }
+
+  .heroRailInner {
+    gap: 0.5rem 1.4rem;
+  }
+
+  .townRun {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.85rem;
+  }
+
+  .locationGrid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+  }
+}
