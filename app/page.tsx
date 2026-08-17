@@ -108,15 +108,20 @@ export default function Page() {
                   </div>
 
                   {/*
-                    Both rows are repeated in full further down the page. On a
-                    phone they stand down so the foot rail keeps its place in
-                    the first viewport; nothing is lost, only reordered.
+                    Hours stay on a phone. It is the fact that pays for a two
+                    in the morning caller, and the space it was once suppressed
+                    to save went unused.
                   */}
-                  <div className="heroPlateRow heroPlateRowDeferred">
+                  <div className="heroPlateRow">
                     <dt>{hero.plateHoursLabel}</dt>
                     <dd>{location.hoursValue}</dd>
                   </div>
 
+                  {/*
+                    Years stand down on a phone so the foot rail keeps its place
+                    in the first viewport. The figure is repeated in full
+                    further down the page; nothing is lost, only reordered.
+                  */}
                   <div className="heroPlateRow heroPlateRowDeferred">
                     <dt>{hero.plateExperienceLabel}</dt>
                     <dd>{location.experienceValue}</dd>
@@ -246,6 +251,8 @@ export default function Page() {
         </section>
 
         <section className="booking">
+          {/* The lamp again, turned down, behind the number. */}
+          <div className="bookingLight" />
           <div className="container">
             <h2 className="sectionHead">{booking.heading}</h2>
             <p className="bookingLead">{booking.lead}</p>

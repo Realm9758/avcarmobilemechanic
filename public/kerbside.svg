@@ -8,7 +8,10 @@
     hanging over a floor. This business has no workshop. It arrives. So the
     light here is cold and lateral, thrown low across a road: the inspection
     lamp set down beside a car that stopped where it stopped, with the wash of
-    a street light somewhere above and behind.
+    a street light somewhere above and behind. The road and street washes are
+    held deliberately low: lifted any further they stop reading as spill and
+    start reading as a blue gradient hero, which is the stock template this
+    page exists to refuse. The ground stays near-black; only the pool is lit.
 
     Falloff is authored across seven stops so the pool has a hot core, a long
     shoulder and a real edge. Grain is baked in over the top, both to kill
@@ -33,10 +36,10 @@
     <!-- The throw along the road, flattened and stretched the way a low beam
          runs out sideways rather than forwards. -->
     <linearGradient id="road" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0" stop-color="#6c9fff" stop-opacity="0.185"/>
-      <stop offset="0.2" stop-color="#4d89f5" stop-opacity="0.12"/>
-      <stop offset="0.52" stop-color="#255ec0" stop-opacity="0.046"/>
-      <stop offset="0.8" stop-color="#14356c" stop-opacity="0.012"/>
+      <stop offset="0" stop-color="#6c9fff" stop-opacity="0.092"/>
+      <stop offset="0.2" stop-color="#4d89f5" stop-opacity="0.058"/>
+      <stop offset="0.52" stop-color="#255ec0" stop-opacity="0.021"/>
+      <stop offset="0.8" stop-color="#14356c" stop-opacity="0.005"/>
       <stop offset="1" stop-color="#000000" stop-opacity="0"/>
     </linearGradient>
 
@@ -52,9 +55,9 @@
     </mask>
 
     <!-- The street light: high, cold, far enough away to be almost nothing. -->
-    <radialGradient id="street" cx="0.82" cy="-0.04" r="0.52">
-      <stop offset="0" stop-color="#b7d0ff" stop-opacity="0.2"/>
-      <stop offset="0.4" stop-color="#3a6fc8" stop-opacity="0.07"/>
+    <radialGradient id="street" cx="0.82" cy="-0.04" r="0.46">
+      <stop offset="0" stop-color="#b7d0ff" stop-opacity="0.085"/>
+      <stop offset="0.4" stop-color="#3a6fc8" stop-opacity="0.026"/>
       <stop offset="1" stop-color="#000000" stop-opacity="0"/>
     </radialGradient>
 
